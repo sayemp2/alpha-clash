@@ -1,47 +1,51 @@
-function hideElement(elementName){
+function hideElement(elementName) {
     const element = document.getElementById(elementName);
     element.classList.add('hidden');
 }
-function addElement(elementName){
+function addElement(elementName) {
     const element = document.getElementById(elementName);
     element.classList.remove('hidden');
 }
 
-function setBgColor(letterName){
+function setBgColor(letterName) {
     const letter = document.getElementById(letterName);
     letter.classList.add('bg-color');
 }
 
-function removeBgColor(letterName){
+function removeBgColor(letterName) {
     const letter = document.getElementById(letterName);
     letter.classList.remove('bg-color');
 }
 
 // genarete letter 
-function genareteLetter(){
+function genareteLetter() {
     const letterString = 'abcdefghijklmnopqrstuvwxyz';
     const letters = letterString.split('');
     // genareteRondom numbers
-    const randomNumber = Math.random()*25;
+    const randomNumber = Math.random() * 25;
     const index = Math.round(randomNumber);
     const letter = letters[index];
     return letter;
 }
 
-// reduceLife
+// get item  text value
 
-function addScore(Score){
-    const CurrentScoreElement = document.getElementById(Score);
-        const CurrentScoreText = CurrentScoreElement.innerText;
-        const currentScore = parseInt(CurrentScoreText);
-        const newScore = currentScore + 1;
-        CurrentScoreElement.innerText = newScore
+function getElementTextValue(element) {
+    const elementById = document.getElementById(element);
+    const elementText = elementById.innerText;
+    const elementValue = parseInt(elementText);
+
+    return elementValue;
 }
 
-function reduceLife(life){
-    const CurrentLifeElement = document.getElementById(life);
-        const CurrentLifeText = CurrentLifeElement.innerText;
-        const currentLife = parseInt(CurrentLifeText);
-        const newLife = currentLife - 1;
-        CurrentLifeElement.innerText = newLife;
+// set item text value
+function setElementTextValue(element, value) {
+    const elementById = document.getElementById(element);
+    elementById.innerText = value;
+}
+
+function getTextElementValue(element){
+    const elementName = document.getElementById(element);
+    const elementValue = elementName.innerText;
+    return elementValue;
 }
